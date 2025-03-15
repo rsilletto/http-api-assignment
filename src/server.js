@@ -1,7 +1,7 @@
 const http = require('http');
 const htmlHandler = require('./htmlResponses.js');
 // const textHandler = require('./textResponses.js');
-// const jsonHandler = require('./jsonResponses.js');
+const jsonHandler = require('./jsonResponses.js');
 // const imageHandler = require('./imageResponses.js');
 // const mediaHandler = require('./mediaResponses.js');
 
