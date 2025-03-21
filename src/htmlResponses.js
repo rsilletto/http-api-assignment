@@ -1,7 +1,6 @@
 const fs = require('fs');
 
 const index = fs.readFileSync(`${__dirname}/../client/client.html`);
-// const page2 = fs.readFileSync(`${__dirname}/../client/client2.html`);
 const styles = fs.readFileSync(`${__dirname}/../client/style.css`);
 
 const getIndex = (request, response) => {
@@ -11,7 +10,7 @@ const getIndex = (request, response) => {
 };
 
 const getStyles = (request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/html' });
+  response.writeHead(200, { 'Content-Type': 'text/css' });
   response.write(styles);
   response.end();
 };
