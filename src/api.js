@@ -1,3 +1,8 @@
+let responseData = {
+  message: '',
+  id: '',
+};
+
 const respond = (request, response, content, type, status) => {
   response.writeHead(status, { 'Content-Type': type });
   response.write(content);
@@ -8,7 +13,7 @@ const success = (request, response, acceptedTypes) => {
   const id = 'success';
   const message = 'Success!';
 
-  const responseData = {
+  responseData = {
     message: message,
     id: id,
   };
@@ -28,7 +33,7 @@ const badRequest = (request, response, acceptedTypes, params) => {
 
   const id = 'badRequest';
 
-  const responseData = {
+  responseData = {
     message: messageValid,
     id: id,
   };
@@ -59,7 +64,7 @@ const unauthorized = (request, response, acceptedTypes, params) => {
 
   const id = 'unauthorized';
 
-  const responseData = {
+  responseData = {
     message: messageValid,
     id: id,
   };
@@ -94,7 +99,7 @@ const forbidden = (request, response, acceptedTypes) => {
 
   const id = 'forbidden';
  
-  const responseData = {
+  responseData = {
     message: message,
     id: id,
   };
@@ -114,7 +119,7 @@ const internal = (request, response, acceptedTypes) => {
 
   const id = 'internal';
  
-  const responseData = {
+  responseData = {
     message: message,
     id: id,
   };
@@ -134,7 +139,7 @@ const notImplemented = (request, response, acceptedTypes) => {
 
   const id = 'notImplemented';
  
-  const responseData = {
+  responseData = {
     message: message,
     id: id,
   };
@@ -154,7 +159,7 @@ const notFound = (request, response, acceptedTypes) => {
 
   const id = 'notFound';
  
-  const responseData = {
+  responseData = {
     message: message,
     id: id,
   };
