@@ -38,7 +38,7 @@ const badRequest = (request, response, acceptedTypes, params) => {
     id: id,
   };
 
-  const responseXml = `<response><message>${messageValid}</message></response>`;
+  let responseXml = `<response><message>${messageValid}</message></response>`;
 
   if (!params.valid) {
     responseData.id = id;
@@ -69,7 +69,7 @@ const unauthorized = (request, response, acceptedTypes, params) => {
     id: id,
   };
 
-  const responseXml = `<response><message>${messageValid}</message></response>`;
+  let responseXml = `<response><message>${messageValid}</message></response>`;
 
   if (!params.valid) {
     responseData.id = id;
