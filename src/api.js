@@ -22,7 +22,7 @@ const badRequest = (request, response, acceptedTypes, params) => {
 
   const responseData = {
     message: messageValid,
-    id: '',
+    id: id,
   };
 
   const responseXml = `<response><message>${messageValid}</message></response>`;
