@@ -18,8 +18,10 @@ const success = (request, response, acceptedTypes) => {
     id: id,
   };
 
+  let responseXml = `<response><message>${message}</message></response>`;
+
   if (acceptedTypes[0] === 'text/xml') { // acceptedTypes is an array of MIME types, sourced from client file
-    const responseXml = `<response><message>${message}</message></response>`;
+    responseXml = `<response><message>${message}</message></response>`;
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 200);
   }
