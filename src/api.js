@@ -44,7 +44,7 @@ const badRequest = (request, response, acceptedTypes, params) => {
     responseData.id = id;
     responseData.message = messageError;
     if (acceptedTypes[0] === 'text/xml') {
-      const responseXml = `<response><message>${messageError}</message><id>${id}</id></response>`;
+      responseXml = `<response><message>${messageError}</message><id>${id}</id></response>`;
       console.log(responseXml);
       return respond(request, response, responseXml, 'text/xml', 400);
     }
@@ -75,7 +75,7 @@ const unauthorized = (request, response, acceptedTypes, params) => {
     responseData.id = id;
     responseData.message = messageError;
     if (acceptedTypes[0] === 'text/xml') {
-      const responseXml = `<response><message>${messageError}</message><id>${id}</id></response>`;
+      responseXml = `<response><message>${messageError}</message><id>${id}</id></response>`;
       console.log(responseXml);
       return respond(request, response, responseXml, 'text/xml', 401);
     }
