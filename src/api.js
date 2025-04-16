@@ -6,9 +6,10 @@ const respond = (request, response, content, type, status) => {
 
 const success = (request, response, acceptedTypes) => {
   const id = 'success';
+  const message = 'Success!';
 
   const responseData = {
-    message: 'Success!',
+    message: message,
     id: id,
   };
 
