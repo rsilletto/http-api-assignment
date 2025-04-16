@@ -5,12 +5,10 @@ const respond = (request, response, content, type, status) => {
 };
 
 const success = (request, response, acceptedTypes) => {
-  const message = 'Success!';
-
   const id = 'success';
 
   const responseData = {
-    message: message,
+    message: 'Success!',
     id: id,
   };
 
@@ -19,7 +17,8 @@ const success = (request, response, acceptedTypes) => {
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 200);
   }
-  return respond(request, response, responseData, 'application/json', 200);
+  console.log(responseData);
+  return respond(request, response, JSON.stringify(responseData), 'application/json', 200);
 };
 
 const badRequest = (request, response, acceptedTypes, params) => {
