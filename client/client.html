@@ -13,15 +13,27 @@
       switch(response.status) {
         case 200: //Success
           content.innerHTML = `<b>Success</b>`;
+          return response.text().then((rawText) =>{
+            console.log(rawText);
+          });
           break;
         case 400: //Bad Request
           content.innerHTML = `<b>Bad Request</b>`;
+          return response.text().then((rawText) =>{
+            console.log(rawText);
+          });
           break;
         case 404: //Not Found
           content.innerHTML = `<b>Not Found</b>`;
+          return response.text().then((rawText) =>{
+            console.log(rawText);
+          });
           break;
         default:
           content.innerHTML = `<p>Status Code not Implemented By Client</p>`;
+          return response.text().then((rawText) =>{
+            console.log(rawText);
+          });
           break;
       }
     };
