@@ -99,6 +99,8 @@ const forbidden = (request, response, acceptedTypes) => {
     id: id,
   };
 
+  console.log(responseData);
+
   return respond(request, response, message, 'application/json', 403);
 };
 
@@ -117,6 +119,8 @@ const internal = (request, response, acceptedTypes) => {
     id: id,
   };
 
+  console.log(responseData);
+
   return respond(request, response, JSON.stringify(responseData), 'application/json', 500);
 };
 
@@ -127,6 +131,16 @@ const notImplemented = (request, response, acceptedTypes) => {
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 501);
   }
+
+  const id = 'notImplemented';
+ 
+  const responseData = {
+    message: message,
+    id: id,
+  };
+
+  console.log(responseData);
+
   return respond(request, response, JSON.stringify(responseData), 'application/json', 501);
 };
 
@@ -144,7 +158,8 @@ const notFound = (request, response, acceptedTypes) => {
     message: message,
     id: id,
   };
-
+  
+  console.log(responseData);
   return respond(request, response, JSON.stringify(responseData), 'application/json', 404);
 };
 
