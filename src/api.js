@@ -6,12 +6,20 @@ const respond = (request, response, content, type, status) => {
 
 const success = (request, response, acceptedTypes) => {
   const message = 'Success!';
+
+  const id = 'success';
+
+  const responseData = {
+    message: message,
+    id: id,
+  };
+
   if (acceptedTypes[0] === 'text/xml') { // acceptedTypes is an array of MIME types, sourced from client file
     const responseXml = `<response><message>${message}</message></response>`;
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 200);
   }
-  return respond(request, response, message, 'application/json', 200);
+  return respond(request, response, responseData, 'application/json', 200);
 };
 
 const badRequest = (request, response, acceptedTypes, params) => {
