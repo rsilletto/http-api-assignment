@@ -61,7 +61,7 @@ const unauthorized = (request, response, acceptedTypes, params) => {
 
   const responseData = {
     message: messageValid,
-    id: '',
+    id: id,
   };
 
   const responseXml = `<response><message>${messageValid}</message></response>`;
@@ -91,6 +91,14 @@ const forbidden = (request, response, acceptedTypes) => {
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 403);
   }
+
+  const id = 'forbidden';
+ 
+  const responseData = {
+    message: message,
+    id: id,
+  };
+
   return respond(request, response, message, 'application/json', 403);
 };
 
@@ -101,7 +109,15 @@ const internal = (request, response, acceptedTypes) => {
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 500);
   }
-  return respond(request, response, message, 'application/json', 500);
+
+  const id = 'internal';
+ 
+  const responseData = {
+    message: message,
+    id: id,
+  };
+
+  return respond(request, response, JSON.stringify(responseData), 'application/json', 500);
 };
 
 const notImplemented = (request, response, acceptedTypes) => {
@@ -111,7 +127,7 @@ const notImplemented = (request, response, acceptedTypes) => {
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 501);
   }
-  return respond(request, response, message, 'application/json', 501);
+  return respond(request, response, JSON.stringify(responseData), 'application/json', 501);
 };
 
 const notFound = (request, response, acceptedTypes) => {
@@ -121,7 +137,15 @@ const notFound = (request, response, acceptedTypes) => {
     console.log(responseXml);
     return respond(request, response, responseXml, 'text/xml', 404);
   }
-  return respond(request, response, message, 'application/json', 404);
+
+  const id = 'notFound';
+ 
+  const responseData = {
+    message: message,
+    id: id,
+  };
+
+  return respond(request, response, JSON.stringify(responseData), 'application/json', 404);
 };
 
 module.exports = {
